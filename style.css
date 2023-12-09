@@ -1,0 +1,291 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #e5e5e5;
+}
+
+main{
+    position: relative;
+    margin: 0 auto;
+    width: 1440px;
+    height: 100vh;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    transition: all .5s;
+}
+
+header{
+    height: 100px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+header > nav{
+    justify-self: start;
+    margin-left: 40px;
+}
+
+header > nav a{
+    position: relative;
+    margin-right: 15px;
+    color: #c4c4c4;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all .5s;
+}
+header > nav a::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    bottom: -6px;
+    border-radius: 2px;
+    background-color: #ffff;
+    opacity: 0;
+    transition: all .5s;
+}
+header > nav a:hover{
+    color: #ffff;
+}
+header > nav a:hover::before{
+    opacity: 1;
+}
+
+header .logo > h2{
+    font-size: 30px;
+    color: #686868;
+}
+
+header .logo > h2 span{
+    color: #fff;
+    letter-spacing: 4px;
+}
+
+header .iconmenu{
+    justify-self: end;
+    margin-right: 40px;
+    display: flex;
+    align-items: center;
+}
+
+header .iconmenu div{
+    position: relative;
+    margin-left: 15px;
+    display: grid;
+}
+
+header .iconmenu i {
+    font-size: 20px;
+    color: #c4c4c4;
+    transition: all .5s;
+}
+
+header .iconmenu div::before{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    bottom: -10px;
+    border-radius: 2px;
+    background-color: #ffff;
+    opacity: 0;
+    transition: all .5s;
+}
+header .iconmenu div:hover i{
+    color: #fff;
+}
+header .iconmenu div:hover::before{
+    opacity: 1;
+}
+
+/* style section */
+section{
+    width: 100%;
+    height: 600px;
+    color: #fff;
+    display: flex;
+}
+
+section .boxleft{
+    width: 50%;
+    display: grid;
+    place-items: center;
+}
+
+section .boxtext1{
+    width: 400px;
+    height: 400px;
+    animation-name: fadetext;
+    animation-duration: 1.2s;
+    display: none;
+}
+
+section .boxtext1 h3{
+    font-weight: 100;
+    color: #c4c4c4;
+}
+
+section .boxtext1 h1{
+    font-size: 40px;
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+}
+
+section .boxright{
+    position: relative;
+    width: 50%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+section .boxright > figure{
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+}
+
+section .boxright > figure img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.btn_slide_img{
+    display: block;
+    position: relative;
+    position: absolute;
+    z-index: 2;
+    bottom: 200px;
+    right: 130px;
+    width: 76px;
+    height: 100px;
+    transition: all .5s;
+}
+.btn_slide_img:hover{
+    transform: translate(0,10px);
+}
+
+.btn_slide_img > div:nth-of-type(1) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    transform: rotate(-45deg);
+}
+.btn_slide_img > div:nth-of-type(2) {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 5px;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 2px;
+    transform: rotate(45deg);
+}
+
+/* style footer */
+footer{
+    height: 100px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+footer .drak-white{
+    justify-self: center;
+    align-self: center;
+    padding: 0 2px;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    transition: all .5s;
+}
+
+footer .drak-white > div{
+    width: 31px;
+    height: 31px;
+    background-color: #000;
+    border-radius: 100%;
+    transition: all .5s;
+}
+
+.clickwhitemode{
+    transform: translate(65px, 0);
+}
+
+.clickwhitemodebk{
+    background-color: #000 !important;
+}
+
+.clickwhitemodecircle{
+    background-color: #fff !important;
+}
+
+.clickwhitemodecolorb{
+    color: #000 !important;
+}
+
+.clickwhitemodecolorw{
+    color: #fff !important;
+}
+
+footer .btnbuy{
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+}
+
+footer .btnbuy h2{
+    color: #fff;
+}
+
+footer .btnbuy a{
+    display: block;
+    padding: 0.5rem 2rem;
+    border-radius: 20px;
+    color: #000;
+    background-color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all .5s;
+}
+
+footer .enua{
+    margin-right: 20px;
+    justify-self: center;
+    align-self: center;
+    color: #686868;
+}
+
+footer .enua span{
+    color: #fff;
+}
+
+
+
+@keyframes fadetext{
+    from{
+        margin-top: 200px;
+        opacity: 0;
+    }
+    to{
+        margin-top: 0;
+        opacity: 1;
+    }
+}
